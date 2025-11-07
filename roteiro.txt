@@ -91,7 +91,16 @@ Antes da primeira entrega, vocês devem preparar suas máquinas.
 • Instale Docker Desktop.
 • Um cliente de API como Postman ou Insomnia.
 2. Estrutura de pastas do projeto (sugestão):
-Figura 1: Estrutura de pastas do projeto
+sctec-projeto/
+|--servico-agendamento/ (Python/Flask)
+|   |--venv/
+|   |--app.py
+|   |--requierments.txt
+|--servico-coordenador/  (Node.js/Express)
+    |--node_modules/
+    |--server.js
+    |--pacage.json
+
 3. Configuração Inicial (Serviço de Agendamento):
 # Dentro da pasta /servico-agendamento
 python -m venv venv
