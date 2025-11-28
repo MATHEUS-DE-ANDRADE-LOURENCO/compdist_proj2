@@ -1,0 +1,309 @@
+INFO:2025-11-28 12:48:49,041:app:Requisição recebida para GET /time
+INFO:2025-11-28 12:52:03,235:app:Requisição recebida para GET /time
+INFO:2025-11-28 13:10:48,658:app:Requisição recebida para GET /time
+INFO:2025-11-28 13:10:50,273:app:Requisição recebida para GET /time
+INFO:2025-11-28 13:10:50,744:app:Requisição recebida para GET /time
+INFO:2025-11-28 13:10:52,410:app:Requisição recebida para GET /time
+INFO:2025-11-28 13:10:54,129:app:Requisição recebida para GET /time
+INFO:2025-11-28 13:20:14,375:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,375:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,376:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,378:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,379:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,380:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,380:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,389:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,381:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,381:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,385:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,385:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,387:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,399:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,406:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,405:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2ce7e0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,406:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2c7da0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,407:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,405:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,407:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,407:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,424:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,416:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2c6180>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,423:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,428:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,408:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,427:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,430:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,433:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2fd610>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,417:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,417:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,438:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,423:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,443:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,441:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2fe330>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,444:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,446:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,446:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2cef00>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,447:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,453:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,450:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2c6ab0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,453:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2ccce0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,454:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,466:app:Requisição recebida para POST /agendamentos
+ERROR:2025-11-28 13:20:14,461:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2cc6e0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,449:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,468:app:Requisição recebida para POST /agendamentos
+ERROR:2025-11-28 13:20:14,469:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb31d850>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,474:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,472:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,485:app:Requisição recebida para POST /agendamentos
+ERROR:2025-11-28 13:20:14,472:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb334b90>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,473:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb31e120>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,486:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,473:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fbdc6210>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,476:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,480:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,471:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,489:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,474:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,492:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,483:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,479:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,485:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,504:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb363380>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,480:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,489:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2cfd70>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,481:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb31f7a0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,484:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,495:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,498:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,500:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,501:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,501:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,485:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,508:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,505:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,506:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,504:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb361fa0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,518:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb2ff410>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,509:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb385520>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,510:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,513:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,524:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,513:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,523:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb31ce60>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,514:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,515:app:Requisição recebida para POST /agendamentos
+ERROR:2025-11-28 13:20:14,515:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb386930>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,533:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f815e510>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,518:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,518:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,509:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,544:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,520:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,546:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,513:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,523:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f815d0d0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,514:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,525:app:Requisição recebida para POST /agendamentos
+ERROR:2025-11-28 13:20:14,528:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb3859d0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,529:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,554:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,536:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,533:app:Requisição recebida para POST /agendamentos
+ERROR:2025-11-28 13:20:14,532:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f8184ef0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,534:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,562:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,515:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb31fa40>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,537:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,538:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,538:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,536:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,541:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,541:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f8187920>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,541:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f8185ee0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,577:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81c3fb0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,521:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,542:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,580:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,533:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,560:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81c01a0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,565:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f815f200>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,561:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f819f860>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,541:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:20:14,561:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,566:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:20:14,586:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,566:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81c0b00>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,568:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,573:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81c1c70>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,530:app:Requisição recebida para POST /agendamentos
+ERROR:2025-11-28 13:20:14,588:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81c25a0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,573:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81c2f90>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,568:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,554:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f819f3b0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,584:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81e84a0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,588:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f819eae0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,579:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb361970>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,566:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81c1370>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,594:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb385040>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,602:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb384cb0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,588:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f815e240>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:20:14,599:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+ERROR:2025-11-28 13:20:14,602:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f815c9b0>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,590:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f815e180>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,604:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f81c3d70>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,605:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932f815d370>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,611:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb360710>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+ERROR:2025-11-28 13:20:14,622:app:Erro ao contatar coordenador: HTTPConnectionPool(host='coordenador', port=3000): Max retries exceeded with url: /lock/acquire (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7932fb361a90>: Failed to resolve 'coordenador' ([Errno -2] Name or service not known)"))
+INFO:2025-11-28 13:24:27,802:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,803:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,809:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,818:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,827:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,823:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,825:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,821:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,849:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,848:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,847:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,857:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,858:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,861:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,856:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,870:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,862:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,874:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,868:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,877:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,878:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,880:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,863:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,876:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,870:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,882:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,882:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,883:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,882:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,885:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,885:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,893:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,899:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,896:app:Lock adquirido com sucesso
+INFO:2025-11-28 13:24:27,898:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,895:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,922:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,897:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,901:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,911:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,912:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,914:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,949:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,921:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,902:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,931:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,958:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,931:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,938:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,939:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,939:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,973:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,945:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,920:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,973:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,950:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,950:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,951:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,951:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,951:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,951:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,952:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,955:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,990:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,934:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,959:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,963:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,963:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,965:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,997:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,966:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,967:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,967:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,999:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,000:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,970:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,970:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,972:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,944:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,949:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,975:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,977:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,977:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,978:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,979:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,980:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,980:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,981:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:28,010:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,983:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:28,014:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,985:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,986:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,987:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,988:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:27,989:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,957:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,995:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,996:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,997:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,965:app:Lock adquirido com sucesso
+INFO:2025-11-28 13:24:27,998:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,968:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:28,029:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,001:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,969:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:28,003:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,004:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,004:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,004:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,005:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,006:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,007:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,009:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:27,981:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:28,011:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,012:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,014:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:27,984:app:Requisição recebida para POST /agendamentos
+INFO:2025-11-28 13:24:28,051:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,017:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,015:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,018:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,018:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,018:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,024:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,025:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,026:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,028:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,000:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,030:app:Conflito detectado no BD
+INFO:2025-11-28 13:24:28,033:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,033:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,035:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,037:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,041:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,041:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,044:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,046:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,047:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,050:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,017:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,052:app:Tentando adquirir lock para o recurso Hubble-Acad_2026-01-01T00:00:00Z
+INFO:2025-11-28 13:24:28,057:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,060:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,061:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,067:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,074:app:Lock adquirido com sucesso
+INFO:2025-11-28 13:24:28,083:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,088:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,090:app:Falha ao adquirir lock, recurso ocupado
+INFO:2025-11-28 13:24:28,094:app:Conflito detectado no BD

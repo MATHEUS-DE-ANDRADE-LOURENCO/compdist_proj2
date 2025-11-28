@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  coordenador:
+    build: ./servico-coordenador
+    ports:
+      - "3000:3000"
+    networks:
+      - sctec-net
+
+  agendamento:
+    build: ./servico-agendamento
+    depends_on:
+      - coordenador
+    ports:
+      - "5000:5000"
+    environment:
+      - COORDINATOR_URL=http://coordenador:3000
+    volumes:
+      - ./servico-agendamento:/app
+    networks:
+      - sctec-net
+
+networks:
+  sctec-net:
+    driver: bridge

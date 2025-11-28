@@ -1,359 +1,193 @@
-Atividade Computação Distribuída
-Web Services e Containers
-Prof Alcides/Prof Mario
-Laboratório
-Sistema de Controle de Telescópio Espacial Compartilhado (SCTEC)
-Vocês foram contratados para desenvolver o núcleo do sistema de agendamento do
-novo telescópio espacial acadêmico. Cientistas do mundo todo competirão por tempo
-de observação neste equipamento, que custa milhões de dólares por hora para operar.
-Nosso desafio não é apenas criar uma API de agendamento, mas garantir que ela seja
-justa, consistente, à prova de falhas em um ambiente de altíssima concorrência.
-Primeiro vamos entender os conceitos e as ferramentas que nos permitirão construir
-a solução.
-Fundamentos teóricos
-O que é um Web Service?
-Um Web Service é um sistema projetado para permitir a comunicação entre diferentes
-máquinas através de uma rede. Ele expõe funcionalidades que podem ser requisitadas
-por outras aplicações, independentemente da linguagem ou sistema operacional.
-O que são APIs e o Padrão REST?
-API (Application Programming Interface): É um contrato, um conjunto de regras que
-permite que diferentes aplicações se comuniquem. A API define quais funcionalidades
-estão disponíveis, que dados são necessários e o que será recebido como resposta.
-REST (REpresentational State Transfer): É um estilo de arquitetura para a criação de
-Web Services.
-1
-API RESTful
-1. Arquitetura Cliente-Servidor: Cliente (quem pede) e servidor (quem responde)
-são separados.
-2. Stateless (sem estado): Cada requisição contém toda a informação necessária
-para ser processada. O servidor não guarda o “contexto” do cliente.
-3. Interface uniforme: Esta é a restrição mais importante do REST.
-• Recursos são identificados por URIs: /telescopios/hubble, /agendamentos/123.
-• Uso dos Métodos HTTP: GET (ler), POST (criar), PUT (atualizar), DELETE (re-
-mover).
-• Representações: Os recursos são trocados em um formato como JSON.
-• HATEOAS (Hypermedia as the Engine of Application State): Este é o nível
-mais alto de maturidade REST. Significa que a resposta do servidor não deve
-conter apenas os dados do recurso, mas também links para as próximas
-ações possíveis que podem ser executadas sobre aquele recurso.
-Ferramentas: Flask e Node.js
-Flask (Python): É um “microframework” para desenvolvimento web em Python. Usa-
-remos o Flask para construir nosso Serviço de Agendamento. Ele é excelente para
-criar APIs RESTful de forma rápida e limpa, cuidando da lógica de negócio principal e
-da comunicação com o banco de dados. Ele será o “cérebro” do nosso sistema.
-Node.js (JavaScript): É um ambiente de execução de JavaScript no lado do servidor.
-Sua principal característica é a arquitetura orientada a eventos e I/O (Entrada/Saída)
-não-bloqueante. Isso o torna extremamente eficiente para tarefas que envolvem mui-
-tas conexões simultâneas ou tempo de espera, como gerenciar locks. Usaremos o
-Node.js para construir nosso Serviço Coordenador, o “porteiro” rápido e eficiente do
-nosso sistema.
-Os três desafios centrais
-1. Condição de corrida (exclusão mútua): O que acontece se dois astrônomos,
-um em São Paulo e outro em Tóquio, conseguirem agendar o telescópio para o
-mesmo slot das 03:00 às 03:05 UTC? A garantia de que apenas um comando de
-agendamento pode ser processado por vez para um mesmo horário é a definição
-de exclusão mútua neste contexto.
-2
-2. A Ilusão do tempo (sincronização de relógio): Se o relógio do astrônomo de
-São Paulo está 2 segundos adiantado e o de Tóquio está 1 segundo atrasado,
-como o sistema pode determinar quem clicou em “reservar” primeiro? Um sis-
-tema distribuído sem uma noção de tempo unificada é caótico e não confiável.
-3. A memória do sistema (logging): Se um agendamento for contestado, como
-podemos provar quem o fez e quando? Se o sistema falhar, como podemos ras-
-trear a sequência de eventos que levou ao erro? Em nosso sistema, o logging
-servirá para:
-• Logging de aplicação (depuração): Registros de eventos de baixo nível que
-ajudam os desenvolvedores a entenderem o fluxo do código. Ex: “Conexão
-com o banco de dados estabelecida”, “Requisição recebida na rota /agenda-
-mentos”.
-• Logging de auditoria (negócio): Uma trilha de eventos importantes do
-ponto de vista do negócio. É um registro imutável de quem fez o quê e
-quando. Ex: “Cientista ‘Marie Curie’ (ID: 7) criou o agendamento (ID: 123)
-para o horário ’2025-12-01T03:00:00Z”. Isso é fundamental para resolver dis-
-putas.
-Arquitetura e Tecnologias
-Serviço de Agendamento (API Principal):
-• Linguagem/Framework: Python 3.9+ com Flask.
-• Banco de Dados: SQLite (para simplicidade inicial) com SQLAlchemy.
-• Responsabilidade: Gerenciar a agenda, os cientistas e a persistência dos dados.
-É a fonte autoritativa do estado da agenda.
-Serviço de Travamento e Sincronia (Coordenador):
-• Linguagem/Framework: Node.js 18+ com Express.js.
-• Responsabilidade: Atuar como um coordenador centralizado para garantir a
-exclusão mútua (serviço de “lock”) e, posteriormente, ajudar na disseminação de
-eventos em tempo real.
-Preparação do Ambiente (Setup Inicial)
-Antes da primeira entrega, vocês devem preparar suas máquinas.
-1. Instalar as Ferramentas:
-3
-• Instale Python 3.9+.
-• Instale Node.js 18+.
-• Instale Docker Desktop.
-• Um cliente de API como Postman ou Insomnia.
-2. Estrutura de pastas do projeto (sugestão):
-sctec-projeto/
-|--servico-agendamento/ (Python/Flask)
-|   |--venv/
-|   |--app.py
-|   |--requierments.txt
-|--servico-coordenador/  (Node.js/Express)
-    |--node_modules/
-    |--server.js
-    |--pacage.json
+Introdução
+Vocês foram contratados para desenvolver o núcleo do sistema de agendamento do novo telescópio espacial acadêmico. Cientistas do mundo todo competirão por tempo de observação neste equipamento, que custa milhões de dólares por hora para operar.
+O desafio é criar uma API de agendamento justa, consistente e à prova de falhas em ambiente de altíssima concorrência.
 
-3. Configuração Inicial (Serviço de Agendamento):
+Fundamentos Teóricos
+O que é um Web Service?
+Um Web Service é um sistema projetado para permitir a comunicação entre diferentes máquinas através de uma rede. Ele expõe funcionalidades que podem ser requisitadas por outras aplicações, independentemente da linguagem ou sistema operacional.
+O que são APIs e o Padrão REST?
+
+API (Application Programming Interface): Contrato que define regras para comunicação entre aplicações, especificando funcionalidades disponíveis, dados necessários e respostas.
+REST (REpresentational State Transfer): Estilo arquitetural para criação de Web Services.
+
+
+API RESTful
+
+Arquitetura Cliente-Servidor: Cliente (quem pede) e servidor (quem responde) são separados.
+Stateless (sem estado): Cada requisição contém toda a informação necessária para ser processada. O servidor não guarda o “contexto” do cliente.
+Interface uniforme:
+
+Recursos identificados por URIs: /telescopios/hubble, /agendamentos/123
+Métodos HTTP: GET (ler), POST (criar), PUT (atualizar), DELETE (remover)
+Representações: recursos trocados em formato como JSON
+HATEOAS (Hypermedia as the Engine of Application State): Resposta do servidor deve conter dados do recurso e links para próximas ações possíveis.
+
+
+
+
+Ferramentas
+
+Flask (Python): Microframework para desenvolvimento web. Usado para construir o Serviço de Agendamento (API principal).
+Node.js (JavaScript): Ambiente de execução para tarefas concorrentes, usado para o Serviço Coordenador (controle de locks).
+
+
+Desafios Centrais
+
+Condição de corrida (exclusão mútua):
+Garantir que apenas um comando de agendamento pode ser processado por vez para um mesmo horário.
+Ilusão do tempo (sincronização de relógio):
+Unificar a noção de tempo entre clientes para garantir justiça.
+Memória do sistema (logging):
+Registrar eventos para depuração e auditoria, incluindo logs de aplicação e de negócio.
+
+
+Arquitetura e Tecnologias
+Serviço de Agendamento (API Principal)
+
+Linguagem/Framework: Python 3.9+ com Flask
+Banco de Dados: SQLite (inicialmente) com SQLAlchemy
+Responsabilidade: Gerenciar agenda, cientistas e persistência dos dados. Fonte autoritativa do estado da agenda.
+
+Serviço de Travamento e Sincronia (Coordenador)
+
+Linguagem/Framework: Node.js 18+ com Express.js
+Responsabilidade: Coordenador centralizado para garantir exclusão mútua (serviço de “lock”) e disseminação de eventos em tempo real.
+
+
+Preparação do Ambiente (Setup Inicial)
+
+
+Instalar as Ferramentas:
+
+Python 3.9+
+Node.js 18+
+Docker Desktop
+Cliente de API (Postman ou Insomnia)
+
+
+
+Estrutura de Pastas do Projeto (sugestão):
+
+
+sctec-projeto/
+  servico-agendamento/   (Python/Flask)
+    venv/
+    app.py
+    requirements.txt
+  servico-coordenador/   (Node.js/Express)
+    node_modules/
+    server.js
+    package.json
+
+
+Configuração Inicial (Serviço de Agendamento):
+
 # Dentro da pasta /servico-agendamento
 python -m venv venv
-source venv/bin/activate # No Windows: venv\Scripts\activate
+source venv/bin/activate
+# No Windows: venv\\Scripts\\activate
 pip install Flask Flask-SQLAlchemy
-# salvar a lista de todas as bibliotecas instaladas
 pip freeze > requirements.txt
-4. Configuração inicial (Serviço Coordenador):
+
+
+Configuração Inicial (Serviço Coordenador):
+
 # Dentro da pasta /servico-coordenador
 npm init -y
 npm install express
-Como os serviços colaboram
-Antes de iniciar, é crucial entender a “divisão de trabalho” em nossa arquitetura de
-microserviços. Teremos dois sistemas independentes que conversam entre si para
-atingir um objetivo comum. Pense neles como o Cérebro e o Porteiro de uma operação
-crítica.
-4
-1. O Cérebro - Serviço de Agendamento (Python/Flask):
-• Responsabilidade: Lidar com toda a lógica de negócio complexa. Ele sabe
-o que é um cientista, o que é um agendamento e como persistir essas infor-
-mações no banco de dados. Ele é a fonte de verdade sobre o “estado” da
-agenda do telescópio.
-• Em Ação: Quando recebe um pedido para criar um agendamento, ele é res-
-ponsável por validar os dados, verificar as regras de negócio e, finalmente,
-salvar o registro no banco de dados.
-2. O Porteiro - Serviço Coordenador (Node.js/Express):
-• Responsabilidade: Executar uma única tarefa de forma extremamente rá-
-pida e eficiente: controlar o acesso. Ele não sabe nada sobre telescópios ou
-cientistas. Sua única função é dizer “pode passar” ou “espere, tem alguém
-na sua frente”. Ele gerencia uma fila invisível para garantir que apenas uma
-operação crítica aconteça por vez.
-• Em Ação: Ele expõe uma API simples para “travar” (lock) um recurso e de-
-pois “destravar” (unlock). Sua natureza leve e orientada a eventos (Node.js)
-é perfeita para essa tarefa de alta concorrência.
-O fluxo de uma requisição: Sincronização e Concorrência
-Para que o agendamento seja justo, o sistema resolve dois desafios em duas etapas:
-Etapa 1: Sincronização do relógio (garantindo um pedido justo)
-Imagine que o relógio do computador de um cientista em São Paulo está 2 segundos
-adiantado.
-1. Busca da Verdade: Antes de permitir o agendamento, o cliente (navegador) faz
-uma requisição GET /time ao Cérebro (Flask).
-• [LOGGING no Cérebro (Flask):] Um Log de Aplicação é gerado, ex: "INFO:
-Requisição recebida em GET /time do IP 1.2.3.4".
-2. Cálculo: O Cérebro responde com seu tempo oficial (a “fonte da verdade”). O
-cliente (usando o Algoritmo de Cristian) calcula e ajusta seu relógio local, com-
-pensando a latência da rede.
-3. Resultado: Agora, o cliente sabe a hora exata. Quando o cientista clica para reser-
-var o horário 03:00:00Z, o timestamp enviado na requisição é o correto (baseado
-no tempo do servidor), e não o horário adiantado da máquina local (03:00:02Z).
-5
-Etapa 2: O Fluxo de uma Requisição de Agendamento Concorrente (Resolvendo a
-Disputa)
-Agora, imagine que duas requisições (de São Paulo e de Tóquio), ambas com o times-
-tamp sincronizado e justo (ex: 03:00:00Z), chegam ao Cérebro (Flask) quase simultane-
-amente. O fluxo para resolver a disputa será o seguinte:
-1. Chegada: O Cérebro (Flask) recebe a primeira requisição POST /agendamentos
-(com timestamp já sincronizado).
-• [LOGGING no Cérebro (Flask):] Log de Aplicação: "INFO: Requisição POST
-/agendamentos recebida para o recurso Hubble-Acad_2025-12-01T03:00:00Z".
-2. Pedido de Permissão (Exclusão Mútua): Antes de tocar no banco de dados,
-o Cérebro pausa e faz uma chamada de rede para o Porteiro (Node.js): “Quero
-acesso exclusivo ao recurso telescopio-1_2025-12-01T03:00:00Z. Posso?”.
-• [LOGGING no Cérebro (Flask):] Log de Aplicação: "INFO: Tentando
-adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z".
-3. Permissão Concedida: O Porteiro, vendo que ninguém mais pediu acesso a esse
-recurso, responde “Sim, pode passar” (HTTP 200 OK) e anota que o recurso agora
-está travado.
-• [LOGGING no Porteiro (Node.js):] "Recebido pedido de lock para
-recurso Hubble-Acad_2025-12-01T03:00:00Z".
-• O Porteiro vê que o recurso está livre e o trava.
-• [LOGGING no Porteiro (Node.js):] "Lock concedido para recurso
-Hubble-Acad_2025-12-01T03:00:00Z".
-• O Porteiro responde “HTTP 200 OK” para o Flask.
-4. Ação Crítica: Com a permissão em mãos, o Cérebro (Flask) executa sua lógica
-crítica: verifica a disponibilidade no banco de dados e salva o novo agendamento.
-• [LOGGING no Cérebro (Flask):] Log de Aplicação: "INFO: Lock adquirido
-com sucesso para o recurso Hubble-Acad_2025-12-01T03:00:00Z".
-• O Cérebro salva o agendamento no banco de dados.
-• [LOGGING no Cérebro (Flask):] Log de AUDITORIA (JSON): {"level":
-"AUDIT", "event_type": "AGENDAMENTO_CRIADO", "agendamento_id":
-123, ...}.
-5. Chegada da segunda requisição: Enquanto o Cérebro está ocupado, a segunda
-requisição (também com timestamp justo) chega. Ela também pede permissão
-ao Porteiro para o mesmo recurso.
-6
-• [LOGGING no Cérebro (Flask):] "INFO: Requisição POST /agendamentos
-recebida para o recurso Hubble-Acad_2025-12-01T03:00:00Z.".
-• O Cérebro (Flask) chama o Porteiro (Node.js) pedindo um lock para o mesmo
-recurso.
-• [LOGGING no Cérebro (Flask):] Um Log de Aplicação é gerado, ex: "INFO:
-Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z".
-6. Permissão Negada: O Porteiro vê que o recurso já está travado e responde “Não,
-espere. Recurso ocupado” (HTTP 409 Conflict). O Cérebro (Flask), ao receber essa
-resposta, rejeita a segunda requisição
-• [LOGGING no Porteiro (Node.js):] "Recebido pedido de lock...".
-• O Porteiro vê que o recurso já está travado.
-• [LOGGING no Porteiro (Node.js):] "Recurso ... já em uso, negando
-lock.".
-• O Porteiro responde “HTTP 409 Conflict” para o Flask.
-7. Rejeição: O Cérebro (Flask) recebe o “Conflict” e rejeita a segunda requisição.
-• [LOGGING no Cérebro (Flask):] "INFO: Falha ao adquirir lock...,
-recurso ocupado.".
-• O Cérebro retorna o erro 409 ao segundo cliente.
-8. Liberação: Após o Cérebro (Flask) terminar sua operação com sucesso, ele envia
-um último comando ao Porteiro: “Obrigado, já terminei. Pode liberar o recurso”.
-O Porteiro então remove a trava.
-• [LOGGING no Cérebro (Flask):] "INFO: Liberando lock para o recurso...".
-• [LOGGING no Porteiro (Node.js):] "Recebido pedido de unlock... Lock
-liberado.".
-Essa colaboração garante que a Sincronização de Relógio torne os pedidos justos, e a
-Exclusão Mútua escolha apenas um vencedor. Ainda registra tudo no Logging (Etapa
-3)
-Entregas do projeto em etapas
-Entrega 1: O Blueprint da API
-• Objetivo: Compreender que um bom software começa com um bom design.
-Aprender a pensar em uma API como um contrato e a projetar a observabilidade
-do sistema desde o início, definindo o formato dos logs de auditoria.
-7
-• Descrição: Nesta fase, vocês atuarão como arquitetos de software, focados pu-
-ramente na especificação.
-• Passo a passo:
-1. Crie um arquivo chamado MODELOS.md para definir as entidades.
-2. Crie um arquivo chamado API.md para descrever cada endpoint, incluindo
-HATEOAS.
-3. Design de Log: Defina a estrutura dos logs de auditoria em LOGGING.md.
-Exemplo:
+
+
+Colaboração entre Serviços
+
+Dois sistemas independentes que conversam entre si para atingir um objetivo comum.
+Cérebro (Flask): Lógica de negócio, persistência, validação.
+Porteiro (Node.js): Controle de acesso, gerenciamento de locks.
+
+
+Fluxo de Requisição: Sincronização e Concorrência
+Etapa 1: Sincronização do Relógio
+
+Cliente faz GET /time ao Flask.
+Flask responde com tempo oficial.
+Cliente ajusta relógio local usando Algoritmo de Cristian.
+
+Etapa 2: Agendamento Concorrente
+
+Flask recebe POST /agendamentos (timestamp sincronizado).
+Flask solicita lock ao Node.js.
+Se lock concedido, salva agendamento; se negado, retorna erro 409.
+Libera lock após operação.
+
+
+Exemplos de Logs
+Log de Auditoria (JSON)
 {
-"timestamp_utc": "2025-10-26T18:00:05.123Z",
-"level": "AUDIT",
-"event_type": "AGENDAMENTO_CRIADO",
-"service": "servico-agendamento",
-"details": {
-"agendamento_id": 123,
-"cientista_id": 7,
-"horario_inicio_utc": "2025-12-01T03:00:00Z"
+  "timestamp_utc": "2025-10-26T18:00:05.123Z",
+  "level": "AUDIT",
+  "event_type": "AGENDAMENTO_CRIADO",
+  "service": "servico-agendamento",
+  "details": {
+    "agendamento_id": 123,
+    "cientista_id": 7,
+    "horario_inicio_utc": "2025-12-01T03:00:00Z"
+  }
 }
-}
-4. Logs de aplicação (exemplo)
-– INFO:2025-10-26T18:00:04.500Z:servico-agendamento:Requisição
-recebida para POST /agendamentos
-– INFO:2025-10-26T18:00:04.505Z:servico-agendamento:Tentando ad-
-quirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
-– INFO:2025-10-26T18:00:05.120Z:servico-agendamento:Lock adquirido
-com sucesso
-– INFO:2025-10-26T18:00:05.122Z:servico-agendamento:Iniciando verifi-
-cação de conflito no BD
-– INFO:2025-10-26T18:00:05.123Z:servico-agendamento:Salvando novo
-agendamento no BD
-– INFO:2025-10-26T18:00:04.800Z:servico-agendamento:Requisição
-recebida para POST /agendamentos
-– INFO:2025-10-26T18:00:04.805Z:servico-agendamento:Tentando ad-
-quirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
-– INFO:2025-10-26T18:00:05.121Z:servico-agendamento:Falha ao adqui-
-rir lock, recurso ocupado
-• Critérios de Avaliação:
-8
-– Arquivo MODELOS.md completo.
-– Arquivo API.md detalhando endpoints e respostas HATEOAS.
-– Seção ou arquivo definindo o formato padrão para os logs.
-Entrega 2: O Sistema inicial (e a prova da falha nos logs)
-• Objetivo: Traduzir a especificação em código funcional, implementar uma API
-RESTful básica em Flask e usar os logs de aplicação e auditoria para provar visu-
-almente a existência de uma condição de corrida.
-• Passo a passo:
-1. Implemente o “Cérebro” (Serviço de Agendamento) em Flask/SQLAlchemy
-de forma simples.
-2. Implementação de logging:
-– Configure o módulo logging do Python para escrever em app.log e no
-console.
-– Adicione logs de aplicação (nível INFO) em pontos-chave: “Requisição
-recebida para POST /agendamentos”, “Iniciando verificação de conflito
-no BD”, “Salvando novo agendamento no BD”.
-– Após salvar com sucesso no banco, emita um log de auditoria (nível WAR-
-NING ou um nível customizado AUDIT) no formato JSON definido na En-
-trega 1.
-3. Implemente a rota POST /agendamentos e os links HATEOAS.
-4. Crie um script de teste de estresse que dispare 10 requisições simultâneas.
-• Como Validar o Sucesso:
-1. Execute o script de teste de estresse.
-2. Consulte o banco de dados e veja os múltiplos registros conflitantes.
-3. Examine app.log. Você deverá ver os logs entrelaçados e múltiplos logs de
-auditoria para o mesmo horário.
-• Critérios de avaliação:
-– Código funcional do serviço Flask com HATEOAS.
-– Script de teste que prova a condição de corrida.
-– Arquivo de log que mostra os logs entrelaçados e duplicados.
-Entrega 3: O Coordenador (e seus próprios registros)
-• Objetivo: Entender a arquitetura de microserviços, a comunicação inter-serviços
-e implementar o padrão de Coordenador Centralizado.
-9
-• Passo a passo:
-1. Implemente o servidor Express com os endpoints POST /lock e POST
-/unlock.
-2. Logging no Coordenador: Adicione logs de console (console.log) no serviço
-Node.js para registrar eventos importantes: “Recebido pedido de lock para
-o recurso X”, “Lock concedido para o recurso X”, “Recurso X já está em uso,
-negando lock”, “Lock para o recurso X liberado”.
-3. Modifique a rota no Flask para chamar o serviço de lock antes da operação
-de BD, garantindo a liberação em um bloco try...finally.
-4. Logging da Coordenação: No serviço Flask, adicione logs de aplicação que
-registrem a comunicação: “Tentando adquirir lock para o recurso X”, “Lock
-adquirido com sucesso”, “Falha ao adquirir lock, recurso ocupado”.
-• Como validar o sucesso:
-1. Inicie ambos os servidores e execute o script de teste.
-2. O resultado deve ser uma requisição 201 Created e nove 409 Conflict.
-3. O banco de dados deve ter apenas um registro.
-4. Observe os terminais: o log do Node.js deve mostrar um lock concedido
-e nove negados. O log do Flask deve mostrar um sucesso, nove falhas e
-apenas um log de auditoria.
-• Critérios de avaliação:
-– Código funcional de ambos os serviços.
-– O teste de estresse prova que a exclusão mútua foi implementada.
-– Os logs de ambos os serviços refletem a lógica de coordenação.
-Entrega 4: A fonte da verdade e o cliente inteligente
-• Objetivo: Compreender a sincronização de tempo cliente-servidor e o HATEOAS.
-• Passo a passo:
-1. Crie o endpoint GET /time no Flask.
-2. Crie a interface web (index.html) com JavaScript que implementa algum al-
-goritmo para sincronizar o tempo.
-3. Faça o cliente usar os links HATEOAS da resposta para habilitar e executar a
-ação de cancelamento.
-4. Logando a nova interação: Adicione um log de auditoria para o evento de
-cancelamento no endpoint correspondente do Flask. O log de aplicação tam-
-bém deve registrar as chamadas ao endpoint /time.
-10
-• Critérios de avaliação:
-– Endpoint /time funcionando e cliente web implementado.
-– O cliente sincroniza o tempo e usa HATEOAS para o cancelamento.
-– Ao cancelar, um novo log de auditoria AGENDAMENTO_CANCELADO deve aparecer
-no app.log.
-Entrega 5: Orquestração com Docker (e logs centralizados)
-• Objetivo: Aprender os fundamentos de conteinerização com Docker e orques-
-tração com Docker Compose.
-• Passo a passo:
-1. Crie um Dockerfile para o servico-agendamento (Python/Flask).
-2. Crie um Dockerfile para o servico-coordenador (Node.js/Express).
-3. Na raiz, crie um docker-compose.yml para conectar os dois serviços.
-4. Modifique a URL no Flask para usar o nome do serviço do Docker Compose
-(ex: http://servico-coordenador:3000).
-• Como validar o sucesso:
-1. Na raiz do projeto, execute docker-compose up --build. Os dois contêine-
-res devem iniciar.
-2. Validação de Logs Orquestrados: Em um novo terminal, execute
-docker-compose logs -f. Isso mostrará o fluxo de logs de ambos os
-contêineres em tempo real e de forma entrelaçada.
-3. Use o Postman ou a interface web para interagir com a aplicação. Observe
-como as requisições geram logs no serviço Flask, que por sua vez geram logs
-no serviço coordenador, tudo visível em um único fluxo. O sistema deve
-funcionar perfeitamente.
-• Critérios de avaliação:
-– Arquivos Dockerfile e docker-compose.yml funcionais.
-– A aplicação é executável com docker-compose up.
-– docker-compose logs demonstra com sucesso a agregação dos logs dos dois
-microserviços, provando que a observabilidade do sistema distribuído está
-funcionando.
-11
+
+Log de Aplicação
+INFO:2025-10-26T18:00:04.500Z:servico-agendamento:Requisição recebida para POST /agendamentos
+INFO:2025-10-26T18:00:04.505Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2025-10-26T18:00:05.120Z:servico-agendamento:Lock adquirido com sucesso
+INFO:2025-10-26T18:00:05.122Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2025-10-26T18:00:05.123Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2025-10-26T18:00:05.121Z:servico-agendamento:Falha ao adquirir lock, recurso ocupado
+
+
+Entregas do Projeto em Etapas
+Entrega 1: Blueprint da API
+
+MODELOS.md: Definição das entidades.
+API.md: Descrição dos endpoints e HATEOAS.
+LOGGING.md: Estrutura dos logs de auditoria e aplicação.
+
+Entrega 2: Sistema Inicial
+
+Implementação básica do Flask/SQLAlchemy.
+Logging de aplicação e auditoria.
+Script de teste de estresse para provar condição de corrida.
+
+Entrega 3: Serviço Coordenador
+
+Implementação do servidor Express (Node.js).
+Logging no coordenador.
+Integração entre Flask e Node.js para controle de locks.
+
+Entrega 4: Sincronização de Tempo e Cliente Inteligente
+
+Endpoint GET /time no Flask.
+Interface web para sincronização de tempo.
+Uso de HATEOAS para cancelamento de agendamento.
+Logging de cancelamento.
+
+Entrega 5: Orquestração com Docker
+
+Dockerfile para ambos os serviços.
+docker-compose.yml para orquestração.
+Validação dos logs centralizados via docker-compose logs -f.
+
+
+Critérios de Avaliação
+
+MODELOS.md completo.
+API.md detalhando endpoints e respostas HATEOAS.
+Seção ou arquivo definindo o formato padrão para os logs.
+Código funcional dos serviços.
+Testes que provam exclusão mútua e sincronização.
+Orquestração e observabilidade dos logs.
+
+
+Observações Finais
+
+O sistema deve garantir justiça, exclusão mútua e rastreabilidade.
+A arquitetura de microserviços facilita escalabilidade e manutenção.
+Docker e Docker Compose são essenciais para orquestração e observabilidade.
+

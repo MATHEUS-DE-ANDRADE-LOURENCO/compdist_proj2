@@ -1,0 +1,11 @@
+Node:
+
+cd /workspaces/compdist_proj2/servico-coordenador && npm install --no-audit --no-fund && node server.js
+
+Python:
+
+python3 /workspaces/compdist_proj2/servico-agendamento/app.py
+
+Comando para rodar tudo:
+
+ss -ltnp | grep -E '3000|5000' || true && echo '--- curl /time ---' && curl -sS http://127.0.0.1:5000/time || true && echo '--- curl /locks ---' && curl -sS http://127.0.0.1:3000/locks || true && echo '--- tail agendamento.log ---' && tail -n 50 /workspaces/compdist_proj2/agendamento.log || true && echo '--- tail coordinator.log ---' && tail -n 50 /workspaces/compdist_proj2/coordinator.log || true

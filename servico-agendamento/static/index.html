@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sincronização de Tempo - SCTec</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 20px; }
+      button { padding: 8px 12px; }
+      pre { background:#f6f6f6; padding:10px; }
+    </style>
+  </head>
+  <body>
+    <h1>Sincronização de Tempo (Algoritmo de Cristian)</h1>
+    <p>Pressione <b>Sincronizar</b> para enviar várias amostras e estimar o offset entre seu relógio e o servidor.</p>
+    <label>Amostras: <input id="samples" type="number" value="5" min="1" max="20"/></label>
+    <button id="sync">Sincronizar</button>
+    <h3>Resultados</h3>
+    <pre id="out">Pronto.</pre>
+
+    <script>
+      function parseServer(iso) { return new Date(iso).getTime(); }
+
+      async function sampleOnce() {
+        const t0 = Date.now();
+        const resp = await fetch('/time');
+        const t1 = Date.now();
+        const j = await resp.json();
+        const server_ms = parseServer(j.time_utc);
+        const rtt = t1 - t0;
+        const offset = server_ms - (t0 + rtt/2);
+        return { t0, t1, server_ms, rtt, offset };
+      }
+
+      document.getElementById('sync').addEventListener('click', async () => {
+        const n = parseInt(document.getElementById('samples').value || '5');
+        const out = document.getElementById('out');
+        out.textContent = 'Executando ' + n + ' amostras...\n';
+        const results = [];
+        for (let i=0;i<n;i++){
+          try{
+            const r = await sampleOnce();
+            results.push(r);
+            out.textContent += `#${i+1} rtt=${r.rtt}ms offset=${Math.round(r.offset)}ms\n`;
+            await new Promise(res=>setTimeout(res,200));
+          }catch(e){ out.textContent += `erro: ${e}\n`; }
+        }
+        if (results.length===0){ out.textContent += 'Nenhuma amostra válida.'; return; }
+        const avgOffset = Math.round(results.reduce((s,x)=>s+x.offset,0)/results.length);
+        const minRTT = Math.min(...results.map(r=>r.rtt));
+        out.textContent += `\nOffset médio estimado: ${avgOffset} ms\nMenor RTT: ${minRTT} ms\n`;
+        const adjusted = new Date(Date.now() + avgOffset).toISOString();
+        out.textContent += `Horário local ajustado (estimado): ${adjusted}`;
+      });
+    </script>
+  </body>
+</html>
