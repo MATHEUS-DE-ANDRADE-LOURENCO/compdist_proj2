@@ -94,3 +94,28 @@
 ---
 
 ## Prints de execução
+
+- /telescopios
+
+<img width="374" height="134" alt="image" src="https://github.com/user-attachments/assets/b4818bdb-3d26-4677-9580-12c640cc6978" />
+
+- Criar Agendamento
+
+<img width="1062" height="256" alt="image" src="https://github.com/user-attachments/assets/c47b0f8e-c650-4ce6-922c-a13d84f84330" />
+
+- Conflito entre dois agendamentos sinalizado pelo coordenador
+
+<img width="1073" height="117" alt="image" src="https://github.com/user-attachments/assets/5569921f-f0f3-45d8-98bc-3833e0582aea" />
+
+- Deletar Agendamento
+
+<img width="995" height="165" alt="image" src="https://github.com/user-attachments/assets/4683b3c4-33fc-44ec-84e0-6cb3253d5bae" />
+
+- Log de Agendamentos
+
+```
+{"timestamp_utc": "2025-11-29T00:36:07.945583+00:00", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 2, "cientista_id": 1, "horario_inicio_utc": "2026-02-01T00:00:00Z"}}
+{"timestamp_utc": "2025-11-29T00:46:47.047766+00:00", "level": "AUDIT", "event_type": "AGENDAMENTO_CANCELADO", "service": "servico-agendamento", "details": {"agendamento_id": 1}}
+``
+
+
