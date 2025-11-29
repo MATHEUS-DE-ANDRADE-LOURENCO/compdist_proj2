@@ -1,5 +1,9 @@
 # Relatório do projeto `compdist_proj2`
 
+Matheus de Andrade Lourenço; 
+Murillo Cardoso Ferreira; 
+Pietro Zanaga Neto <br>
+
 ## Contexto
 
 - Objetivo: sistema de agendamento distribuído para demonstrar controle de concorrência e coordenação de locks entre serviços que reservam recursos (telescópios).
