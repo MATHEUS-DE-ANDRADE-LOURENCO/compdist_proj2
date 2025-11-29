@@ -116,7 +116,7 @@
 ```
 {"timestamp_utc": "2025-11-29T00:36:07.945583+00:00", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 2, "cientista_id": 1, "horario_inicio_utc": "2026-02-01T00:00:00Z"}}
 {"timestamp_utc": "2025-11-29T00:46:47.047766+00:00", "level": "AUDIT", "event_type": "AGENDAMENTO_CANCELADO", "service": "servico-agendamento", "details": {"agendamento_id": 1}}
-
+```
 - Interface para uso do Algoritmo de Cristian
 
 <img width="1821" height="378" alt="image" src="https://github.com/user-attachments/assets/4f7c906e-380d-4a10-8541-e393f7c5c9e1" />
