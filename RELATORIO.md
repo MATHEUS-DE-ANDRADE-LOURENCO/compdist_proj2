@@ -93,5 +93,4 @@
 
 ---
 
-## Prints de execução (deixar para nós colocarmos as imagens)
-
+## Prints de execução
