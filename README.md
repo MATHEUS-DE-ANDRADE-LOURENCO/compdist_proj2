@@ -1,5 +1,8 @@
 # Projeto SCTec - Serviço de Agendamento
 
+Matheus de Andrade Lourenço
+Murillo Cardoso Ferreira
+Pietro Zanaga Neto
 Esta implementação contém:
 
 - `servico-agendamento`: API Flask (porta 5000)
