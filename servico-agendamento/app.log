@@ -307,3 +307,13 @@ INFO:2025-11-28 13:24:28,083:app:Falha ao adquirir lock, recurso ocupado
 INFO:2025-11-28 13:24:28,088:app:Falha ao adquirir lock, recurso ocupado
 INFO:2025-11-28 13:24:28,090:app:Falha ao adquirir lock, recurso ocupado
 INFO:2025-11-28 13:24:28,094:app:Conflito detectado no BD
+INFO:2025-11-28 23:59:59,746:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:01,528:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:03,637:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:05,380:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:05,942:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:07,611:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:09,293:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:11,286:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:12,932:app:Requisição recebida para GET /time
+INFO:2025-11-29 00:00:13,519:app:Requisição recebida para GET /time
